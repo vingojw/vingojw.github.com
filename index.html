@@ -221,6 +221,118 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-node-inspector调试node" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/node-inspector调试node/" class="article-date">
+  <time datetime="2016-05-09T03:28:00.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/node-inspector调试node/">node-inspector调试node</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先安装<br>npm install -g node-inspector</p>
+<p>先开个控制台再运行下面的<br>node-inspector     </p>
+<p>再开个控制台接着在运行</p>
+<p>node-debug app.js </p>
+<p>会自动打开浏览器，并断点在第一行，这样通过熟悉的方式来调试node。</p>
+<p>每次调试要手动开两次命令行并输入命令，可以简单一点。</p>
+<p>两种方法：</p>
+<h3 id="第一种："><a href="#第一种：" class="headerlink" title="第一种："></a>第一种：</h3><p>在package.json 里面的配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"debug"</span>: <span class="string">"set NODE_ENV=debug&amp;&amp; node-debug app.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>先开一个命令行执行<code>node-inspector</code></p>
+<p>再运行 npm run debug</p>
+<h3 id="第二种："><a href="#第二种：" class="headerlink" title="第二种："></a>第二种：</h3><p><code>start bash.exe</code> 可以打开一个新的bash窗口</p>
+<p>如果想带上命令那么</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start bash -c <span class="string">"node-inspector &amp;"</span></span><br></pre></td></tr></table></figure>
+<p>想执行多个命令就用 <code>&amp;</code> 连接</p>
+<p>下面的代码就能够同时执行两个，不用每次开窗口了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start bash -c <span class="string">"node-inspector &amp;"</span> &amp; start bash -c <span class="string">"node-debug app.js"</span></span><br></pre></td></tr></table></figure>
+<p>在把这句整成简写<code>tiaoshi</code></p>
+<p>windows 下 在用户名录下新建了一个 .bashrc 文件 并写入简写</p>
+<p>alias tiaoshi=’start bash -c “node-inspector &amp;” &amp; start bash -c “node-debug app.js”‘;<br>关闭命令行，再打开，发现提示错误</p>
+<p>WARNING: Found ~/.bashrc but no ~/.bash_profile, ~/.bash_login or ~/.profile.</p>
+<p>于是再新建没有的几个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch .bash_profile</span><br><span class="line">touch .bash_login</span><br><span class="line">touch .profile</span><br></pre></td></tr></table></figure>
+<p>关闭命令行再打开， 此时在你的项目目录下手动输入 tiaoshi，就ok了。 默认启动的是app.js。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://vingojw.github.io/2016/05/09/node-inspector调试node/" data-id="cinzgo1u6000uj0vs451hjof2" class="article-share-link" data-share="baidu" data-title="node-inspector调试node">分享到</a>
+      
+
+      
+        <a href="http://vingojw.github.io/2016/05/09/node-inspector调试node/#ds-thread" class="article-comment-link">評論</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-你有拖延症吗" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/03/你有拖延症吗/" class="article-date">
+  <time datetime="2016-04-03T12:42:27.000Z" itemprop="datePublished">2016-04-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/03/你有拖延症吗/">你有拖延症吗</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>视频里面有说到的生命日历，于是弄了个demo。 <a href="util/LifeCalendar.html">LifeCalendar.html</a></p>
+<object width="640" height="360"><param name="movie" value="http://swf.ws.126.net/openplayer/v02/-0-2_MBHQSM52F_MBI15O7QE-vimg1_ws_126_net//image/snapshot_movie/2016/3/Q/F/MBI15O7QF-1423031805654.swf?isTEDPlay=1"><param name="allowScriptAccess" value="always"><param name="wmode" value="transparent"><embed src="http://swf.ws.126.net/openplayer/v02/-0-2_MBHQSM52F_MBI15O7QE-vimg1_ws_126_net//image/snapshot_movie/2016/3/Q/F/MBI15O7QF-1423031805654.swf?isTEDPlay=1" type="application/x-shockwave-flash" width="640" height="360" allowfullscreen="true" wmode="transparent" allowscriptaccess="always"></object>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://vingojw.github.io/2016/04/03/你有拖延症吗/" data-id="cinzgo1un001bj0vsu2xptn5x" class="article-share-link" data-share="baidu" data-title="你有拖延症吗">分享到</a>
+      
+
+      
+        <a href="http://vingojw.github.io/2016/04/03/你有拖延症吗/#ds-thread" class="article-comment-link">評論</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-不让vue-router记录滚动条" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/06/不让vue-router记录滚动条/" class="article-date">
@@ -248,11 +360,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2016/01/06/不让vue-router记录滚动条/" data-id="cime9ajss0019x4vsih6nwxmn" class="article-share-link" data-share="baidu" data-title="不让vue-router记录滚动条">分享到</a>
+        <a data-url="http://vingojw.github.io/2016/01/06/不让vue-router记录滚动条/" data-id="cinzgo1uh0015j0vsuby26my7" class="article-share-link" data-share="baidu" data-title="不让vue-router记录滚动条">分享到</a>
       
 
       
-        <a href="http://vingojw.github.io/2016/01/06/不让vue-router记录滚动条/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://vingojw.github.io/2016/01/06/不让vue-router记录滚动条/#ds-thread" class="article-comment-link">評論</a>
       
 
       
@@ -300,11 +412,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/12/21/vuejs前进后退过场效果/" data-id="cime9ajsm0015x4vsz1gcj3tt" class="article-share-link" data-share="baidu" data-title="vuejs前进后退过场效果">分享到</a>
+        <a data-url="http://vingojw.github.io/2015/12/21/vuejs前进后退过场效果/" data-id="cinzgo1um0019j0vsoxq3fcur" class="article-share-link" data-share="baidu" data-title="vuejs前进后退过场效果">分享到</a>
       
 
       
-        <a href="http://vingojw.github.io/2015/12/21/vuejs前进后退过场效果/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://vingojw.github.io/2015/12/21/vuejs前进后退过场效果/#ds-thread" class="article-comment-link">評論</a>
       
 
       
@@ -358,11 +470,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/12/06/OS-X-EI-Capitan-9700USB网卡没办法识别/" data-id="cime9ajqp0000x4vs4peyu7vh" class="article-share-link" data-share="baidu" data-title="OS X EI Capitan 9700USB网卡没办法识别">分享到</a>
+        <a data-url="http://vingojw.github.io/2015/12/06/OS-X-EI-Capitan-9700USB网卡没办法识别/" data-id="cinzgo1s90000j0vsag2cn5c9" class="article-share-link" data-share="baidu" data-title="OS X EI Capitan 9700USB网卡没办法识别">分享到</a>
       
 
       
-        <a href="http://vingojw.github.io/2015/12/06/OS-X-EI-Capitan-9700USB网卡没办法识别/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://vingojw.github.io/2015/12/06/OS-X-EI-Capitan-9700USB网卡没办法识别/#ds-thread" class="article-comment-link">評論</a>
       
 
       
@@ -407,11 +519,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/12/03/safari不支持beforeunload/" data-id="cime9ajse000xx4vsl5vn49hy" class="article-share-link" data-share="baidu" data-title="beforeunload 不支持 safari">分享到</a>
+        <a data-url="http://vingojw.github.io/2015/12/03/safari不支持beforeunload/" data-id="cinzgo1uf0014j0vsi2madvjt" class="article-share-link" data-share="baidu" data-title="beforeunload 不支持 safari">分享到</a>
       
 
       
-        <a href="http://vingojw.github.io/2015/12/03/safari不支持beforeunload/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://vingojw.github.io/2015/12/03/safari不支持beforeunload/#ds-thread" class="article-comment-link">評論</a>
       
 
       
@@ -457,11 +569,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/11/20/webpack版本管理/" data-id="cime9ajsj0011x4vs5y44wqsl" class="article-share-link" data-share="baidu" data-title="webpack版本管理">分享到</a>
+        <a data-url="http://vingojw.github.io/2015/11/20/webpack版本管理/" data-id="cinzgo1uk0018j0vswthvyay6" class="article-share-link" data-share="baidu" data-title="webpack版本管理">分享到</a>
       
 
       
-        <a href="http://vingojw.github.io/2015/11/20/webpack版本管理/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://vingojw.github.io/2015/11/20/webpack版本管理/#ds-thread" class="article-comment-link">評論</a>
       
 
       
@@ -505,11 +617,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/11/09/hexo d 无法push/" data-id="cime9ajrk000ex4vsuzu5mcft" class="article-share-link" data-share="baidu" data-title="hexo d无法push">分享到</a>
+        <a data-url="http://vingojw.github.io/2015/11/09/hexo d 无法push/" data-id="cinzgo1to000gj0vsamcm7pzz" class="article-share-link" data-share="baidu" data-title="hexo d无法push">分享到</a>
       
 
       
-        <a href="http://vingojw.github.io/2015/11/09/hexo d 无法push/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://vingojw.github.io/2015/11/09/hexo d 无法push/#ds-thread" class="article-comment-link">評論</a>
       
 
       
@@ -557,11 +669,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/08/22/在if-else中声明函数/" data-id="cime9ajsy001ex4vs04e35jm1" class="article-share-link" data-share="baidu" data-title="在if-else中声明函数">分享到</a>
+        <a data-url="http://vingojw.github.io/2015/08/22/在if-else中声明函数/" data-id="cinzgo1uv001hj0vs4d84comx" class="article-share-link" data-share="baidu" data-title="在if-else中声明函数">分享到</a>
       
 
       
-        <a href="http://vingojw.github.io/2015/08/22/在if-else中声明函数/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://vingojw.github.io/2015/08/22/在if-else中声明函数/#ds-thread" class="article-comment-link">評論</a>
       
 
       
@@ -644,115 +756,16 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/08/19/learn-webpack/" data-id="cime9ajs5000rx4vsdxvvcbik" class="article-share-link" data-share="baidu" data-title="webpack">分享到</a>
+        <a data-url="http://vingojw.github.io/2015/08/19/learn-webpack/" data-id="cinzgo1u9000zj0vsbgb6xiun" class="article-share-link" data-share="baidu" data-title="webpack">分享到</a>
       
 
       
-        <a href="http://vingojw.github.io/2015/08/19/learn-webpack/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://vingojw.github.io/2015/08/19/learn-webpack/#ds-thread" class="article-comment-link">評論</a>
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-升级hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/19/升级hexo/" class="article-date">
-  <time datetime="2015-08-19T13:44:27.000Z" itemprop="datePublished">2015-08-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/19/升级hexo/">升级hexo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">mkdir hexo3</span><br><span class="line">cd hexo3</span><br><span class="line">hexo init</span><br><span class="line">cnpm install hexo --save</span><br><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>然后配置文件 _config.yml 跟之前的不同。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git   //这里要改成 git</span><br><span class="line">  repo: git@github.com:vingojw/vingojw.github.com.git</span><br><span class="line">  branch:      //这里不想写就留空 </span><br><span class="line">  message:     //这里也是一样，默认提交格式 “Site updated: 2015-08-19 21:16:13”</span><br></pre></td></tr></table></figure>
-<p>接着就是把以前的 source 和 theme文件夹覆盖就好了。</p>
-<p>运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://vingojw.github.io/2015/08/19/升级hexo/" data-id="cime9ajsx001dx4vs25dha8ow" class="article-share-link" data-share="baidu" data-title="升级hexo">分享到</a>
-      
-
-      
-        <a href="http://vingojw.github.io/2015/08/19/升级hexo/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-sass" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/12/sass/" class="article-date">
-  <time datetime="2015-04-11T16:53:59.000Z" itemprop="datePublished">2015-04-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/12/sass/">sass</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>MAC 自带rugy，so直接</p>
-<p>sudo gem install sass  需要系统权限，否则安装的时候各种文件没权限。</p>
-<p>sublime 安装 插件 sass 和 sass build，<br>安装好之后，使用就是 commad+b</p>
-<p>创建 compass项目  </p>
-<p>compass create sass-test</p>
-<p>然后是 sass的语法， 可以参考<a href="http://www.ruanyifeng.com/blog/2012/06/sass.html" target="_blank" rel="external">SASS 用法</a></p>
-<h2 id="chrome下调试："><a href="#chrome下调试：" class="headerlink" title="chrome下调试："></a>chrome下调试：</h2><p>参考：<a href="http://www.w3cplus.com/preprocessor/sass-debug-with-developer-tool.html" target="_blank" rel="external">SASS调试</a></p>
-<p>输入以下，来用于监听修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sass --watch --scss --sourcemap style.scss:style.css</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://vingojw.github.io/2015/04/12/sass/" data-id="cime9ajsg000zx4vsjij5qst0" class="article-share-link" data-share="baidu" data-title="sass">分享到</a>
-      
-
-      
-        <a href="http://vingojw.github.io/2015/04/12/sass/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
     </footer>
   </div>
   
@@ -773,27 +786,27 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
+    <h3 class="widget-title">標簽</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/KY-RD9700/">KY-RD9700</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo插件/">hexo插件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/KY-RD9700/">KY-RD9700</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo插件/">hexo插件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
+    <h3 class="widget-title">標簽雲</h3>
     <div class="widget tagcloud">
-      <a href="/tags/KY-RD9700/" style="font-size: 10px;">KY-RD9700</a> <a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo插件/" style="font-size: 10px;">hexo插件</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a>
+      <a href="/tags/KY-RD9700/" style="font-size: 10px;">KY-RD9700</a> <a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo插件/" style="font-size: 10px;">hexo插件</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
+    <h3 class="widget-title">歸檔</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -803,6 +816,14 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/09/node-inspector调试node/">node-inspector调试node</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/03/你有拖延症吗/">你有拖延症吗</a>
+          </li>
         
           <li>
             <a href="/2016/01/06/不让vue-router记录滚动条/">不让vue-router记录滚动条</a>
@@ -816,14 +837,6 @@
             <a href="/2015/12/06/OS-X-EI-Capitan-9700USB网卡没办法识别/">OS X EI Capitan 9700USB网卡没办法识别</a>
           </li>
         
-          <li>
-            <a href="/2015/12/03/safari不支持beforeunload/">beforeunload 不支持 safari</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/20/webpack版本管理/">webpack版本管理</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -831,7 +844,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">友情鏈接</h3>
     <div class="widget">
       <ul>
         
@@ -892,7 +905,7 @@
 </nav>
   <!-- totop start -->
 <div id="totop">
-<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+<a title="返回頂部"><img src="/img/scrollup.png"/></a>
 </div>
 
 <!-- totop end -->
