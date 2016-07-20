@@ -221,6 +221,55 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-Safari-ajax-报错-SyntaxError-DOM-Exception-12" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/" class="article-date">
+  <time datetime="2016-07-09T14:29:05.000Z" itemprop="datePublished">2016-07-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/">Safari ajax 报错 SyntaxError: DOM Exception 12</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在电脑的safari上不能发送ajax， 调试一下发现 报错 SyntaxError: DOM Exception 12</p>
+<p>搜了一圈，找到这篇<a href="http://www.blogjava.net/laxxx/archive/2015/12/17/428705.html" target="_blank" rel="external">angular1.3.15 下 safari9.0.1 爆错：SyntaxError: DOM Exception 12</a> </p>
+<p>说是后面有个空格导致的。于是找到代码中，发现<br>方法中ajax会设置一个头部</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader( <span class="string">"Authorization"</span>, ( <span class="string">"Bearer "</span>+ ( get(<span class="string">'token'</span>) || <span class="string">''</span> ) ) );</span><br></pre></td></tr></table></figure>
+<p>由于在get(‘token’) 的时候没有的时候就会为空，那么上面的代码就相当于</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader(<span class="string">"Authorization"</span>, (<span class="string">"Bearer "</span>));</span><br></pre></td></tr></table></figure>
+<p>解决：<br>get(‘token’)不为空时再设置头。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://vingojw.github.io/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/" data-id="ciqujtkec0001ggvs74v2m939" class="article-share-link" data-share="baidu" data-title="Safari ajax 报错 SyntaxError: DOM Exception 12">Share</a>
+      
+
+      
+        <a href="http://vingojw.github.io/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-node-inspector调试node" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/09/node-inspector调试node/" class="article-date">
@@ -271,7 +320,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2016/05/09/node-inspector调试node/" data-id="cipz1h8bb001cxcvsm0jj0els" class="article-share-link" data-share="baidu" data-title="node-inspector调试node">Share</a>
+        <a data-url="http://vingojw.github.io/2016/05/09/node-inspector调试node/" data-id="ciqujtkg80017ggvs1crea5s9" class="article-share-link" data-share="baidu" data-title="node-inspector调试node">Share</a>
       
 
       
@@ -318,7 +367,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2016/04/03/你有拖延症吗/" data-id="cipz1h8b3001axcvs6ec5g7m1" class="article-share-link" data-share="baidu" data-title="你有拖延症吗">Share</a>
+        <a data-url="http://vingojw.github.io/2016/04/03/你有拖延症吗/" data-id="ciqujtkgf001dggvszfyzhkjw" class="article-share-link" data-share="baidu" data-title="你有拖延症吗">Share</a>
       
 
       
@@ -360,7 +409,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2016/01/06/不让vue-router记录滚动条/" data-id="cipz1h8aj0010xcvszm8upxhe" class="article-share-link" data-share="baidu" data-title="不让vue-router记录滚动条">Share</a>
+        <a data-url="http://vingojw.github.io/2016/01/06/不让vue-router记录滚动条/" data-id="ciqujtkg30016ggvskx9gfvqf" class="article-share-link" data-share="baidu" data-title="不让vue-router记录滚动条">Share</a>
       
 
       
@@ -412,7 +461,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/12/21/vuejs前进后退过场效果/" data-id="cipz1h8aw0015xcvsw3a6cqzs" class="article-share-link" data-share="baidu" data-title="vuejs前进后退过场效果">Share</a>
+        <a data-url="http://vingojw.github.io/2015/12/21/vuejs前进后退过场效果/" data-id="ciqujtkgd001bggvshzcbrvia" class="article-share-link" data-share="baidu" data-title="vuejs前进后退过场效果">Share</a>
       
 
       
@@ -470,7 +519,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/12/06/OS-X-EI-Capitan-9700USB网卡没办法识别/" data-id="cipz1h88r0002xcvsbai15oj1" class="article-share-link" data-share="baidu" data-title="OS X EI Capitan 9700USB网卡没办法识别">Share</a>
+        <a data-url="http://vingojw.github.io/2015/12/06/OS-X-EI-Capitan-9700USB网卡没办法识别/" data-id="ciqujtkek0004ggvs4enl5wrc" class="article-share-link" data-share="baidu" data-title="OS X EI Capitan 9700USB网卡没办法识别">Share</a>
       
 
       
@@ -519,7 +568,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/12/03/safari不支持beforeunload/" data-id="cipz1h8dj001oxcvs4k7yqvfo" class="article-share-link" data-share="baidu" data-title="beforeunload 不支持 safari">Share</a>
+        <a data-url="http://vingojw.github.io/2015/12/03/safari不支持beforeunload/" data-id="ciqujtkg20015ggvsi0f2zunr" class="article-share-link" data-share="baidu" data-title="beforeunload 不支持 safari">Share</a>
       
 
       
@@ -569,7 +618,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/11/20/webpack版本管理/" data-id="cipz1h8at0014xcvsmopvadz8" class="article-share-link" data-share="baidu" data-title="webpack版本管理">Share</a>
+        <a data-url="http://vingojw.github.io/2015/11/20/webpack版本管理/" data-id="ciqujtkgb001aggvskh3tgs6e" class="article-share-link" data-share="baidu" data-title="webpack版本管理">Share</a>
       
 
       
@@ -617,7 +666,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/11/09/hexo d 无法push/" data-id="cipz1h89j000excvsnf3j3ghj" class="article-share-link" data-share="baidu" data-title="hexo d无法push">Share</a>
+        <a data-url="http://vingojw.github.io/2015/11/09/hexo d 无法push/" data-id="ciqujtkev0009ggvsckl5cukm" class="article-share-link" data-share="baidu" data-title="hexo d无法push">Share</a>
       
 
       
@@ -669,7 +718,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2015/08/22/在if-else中声明函数/" data-id="cipz1h8b9001bxcvs9rlxoorq" class="article-share-link" data-share="baidu" data-title="在if-else中声明函数">Share</a>
+        <a data-url="http://vingojw.github.io/2015/08/22/在if-else中声明函数/" data-id="ciqujtkgi001gggvsc2meafl7" class="article-share-link" data-share="baidu" data-title="在if-else中声明函数">Share</a>
       
 
       
@@ -684,98 +733,9 @@
 
 
   
-    <article id="post-learn-webpack" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/19/learn-webpack/" class="article-date">
-  <time datetime="2015-08-19T14:42:08.000Z" itemprop="datePublished">2015-08-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/19/learn-webpack/">webpack</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://github.com/kairyou/demo/blob/master/webpack.md?menu=2&amp;cty=2" target="_blank" rel="external">Webpack 使用介绍, 以及与gulp的搭配(顺带css-sprite)</a></p>
-<p><a href="http://www.cnblogs.com/vajoy/p/4650467.html?utm_source=tuicool" target="_blank" rel="external">一小时包教会 —— webpack 入门指南</a></p>
-<p><a href="https://github.com/ruanyf/webpack-demos" target="_blank" rel="external">阮一峰 webpack-demos</a></p>
-<p><a href="http://blog.csdn.net/zhbhun/article/details/47208885" target="_blank" rel="external">webpack学习笔记</a></p>
-<p><a href="http://segmentfault.com/a/1190000002551952" target="_blank" rel="external">入门指迷</a></p>
-<p><a href="http://segmentfault.com/a/1190000002552008" target="_blank" rel="external">webpack 怎么用</a></p>
-<p><a href="http://segmentfault.com/a/1190000002889630" target="_blank" rel="external">关于配置的注释</a></p>
-<p><a href="https://robots.thoughtbot.com/setting-up-webpack-for-react-and-hot-module-replacement" target="_blank" rel="external">关于代码热替换</a></p>
-<p><a href="http://www.jianshu.com/p/8adf4c2bfa51" target="_blank" rel="external">Webpack-dev-server结合后端服务器的热替换配置</a></p>
-<p><a href="http://www.ituring.com.cn/article/200534" target="_blank" rel="external">Webpack 性能优化 （一）（使用别名做重定向）</a> <a href="http://code.oneapm.com/javascript/2015/07/07/webpack_performance_1/" target="_blank" rel="external">备份网址</a></p>
-<p><a href="http://www.alloyteam.com/2016/01/webpack-use-optimization/" target="_blank" rel="external">webpack使用优化</a></p>
-<p>视频教程(需要翻墙)</p>
-<ol>
-<li><p><a href="https://www.youtube.com/watch?v=TaWKUpahFZM" target="_blank" rel="external">https://www.youtube.com/watch?v=TaWKUpahFZM</a></p>
-</li>
-<li><p><a href="https://www.youtube.com/watch?v=RKqRj3VgR_c" target="_blank" rel="external">https://www.youtube.com/watch?v=RKqRj3VgR_c </a></p>
-</li>
-</ol>
-<h2>关于第一个视频的笔记</h2>
-
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>建立一个 learn-webpack的文件夹</p>
-<p>这里用到了cnpm 淘宝 NPM 镜像<br>cnpm install -g webpack</p>
-<p>npm init 一路回车<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;learn-webpack&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;&#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;&#125;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;start&quot;: &quot;webpack ./index.js bundle.js&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;author&quot;: &quot;&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>新建一个index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span><br><span class="line">     &lt;title&gt;learn-webpack&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;bundle.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>新建indiex.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;hello&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>控制台执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
-<p>就会把 index.js 编译成 bundle.js。 打开 index.html 就会看到控制台输出。</p>
-<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>再新建一个文件bear.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &apos;growl!&apos;</span><br></pre></td></tr></table></figure></p>
-<p>修改index.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(require(&apos;./bear.js&apos;));</span><br></pre></td></tr></table></figure></p>
-<p>控制台再执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
-<h2 id="修改后自动更新"><a href="#修改后自动更新" class="headerlink" title="修改后自动更新"></a>修改后自动更新</h2><p>每次修改文件后都要 npm start 一下，这样好麻烦。<br>安装 webpack-dev-server<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install webpack-dev-server --save-dev</span><br></pre></td></tr></table></figure></p>
-<p>然后修改 package.json 中 script 的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack ./index.js bundle.js</span><br></pre></td></tr></table></figure></p>
-<p>修改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack-dev-server ./index.js</span><br></pre></td></tr></table></figure></p>
-<p>接着<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
-<p>访问：<a href="http://localhost:8080/webpack-dev-server/" target="_blank" rel="external">http://localhost:8080/webpack-dev-server/</a><br>这样每次修改了 index.js ，浏览器就会自动刷新。</p>
-<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p>需要安装两个模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install css-loader --save-dev</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install style-loader --save-dev</span><br></pre></td></tr></table></figure>
-<p>然后新建bear.css文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">     color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>index.js 后面加一句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(  require(&apos;./bear.js&apos;));</span><br><span class="line"></span><br><span class="line">require(&apos;style!css!./bear.css&apos;);//在html中 以内联style的方式载入bear.css</span><br></pre></td></tr></table></figure></p>
-<p>css 中 还可以 @import其他的css<br>如在bear.css 中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@import &apos;base.css&apos;; /*这里的分号不要忘记了*/</span><br><span class="line">div&#123;</span><br><span class="line">     color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样就包括了 base.css</p>
-<h2 id="swebpack-config-js"><a href="#swebpack-config-js" class="headerlink" title="swebpack.config.js"></a>swebpack.config.js</h2><p>新建 webpack.config.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">     entry:&apos;./index.js&apos;,</span><br><span class="line">     output:&#123;</span><br><span class="line">          path: __dirname,</span><br><span class="line">          filename: &apos;bundle.js&apos;</span><br><span class="line">     &#125;,</span><br><span class="line">     module:&#123;</span><br><span class="line">          loaders:[</span><br><span class="line">          &#123; test: /\.css$/,loader:&apos;style!css!&apos;&#125;</span><br><span class="line">          ]</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样设置后<br>就可以将 index.js  中的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(&apos;style!css!./bear.css&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(&apos;./bear.css&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>接着再次<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://vingojw.github.io/2015/08/19/learn-webpack/" data-id="cipz1h8a3000qxcvs6ml687z3" class="article-share-link" data-share="baidu" data-title="webpack">Share</a>
-      
-
-      
-        <a href="http://vingojw.github.io/2015/08/19/learn-webpack/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -806,7 +766,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -816,6 +776,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/">Safari ajax 报错 SyntaxError: DOM Exception 12</a>
+          </li>
         
           <li>
             <a href="/2016/05/09/node-inspector调试node/">node-inspector调试node</a>
@@ -831,10 +795,6 @@
         
           <li>
             <a href="/2015/12/21/vuejs前进后退过场效果/">vuejs前进后退过场效果</a>
-          </li>
-        
-          <li>
-            <a href="/2015/12/06/OS-X-EI-Capitan-9700USB网卡没办法识别/">OS X EI Capitan 9700USB网卡没办法识别</a>
           </li>
         
       </ul>
@@ -861,7 +821,7 @@
           </li>
         
           <li>
-            <a href="http://iu2fish.github.io/" target="_blank">蒹葭从风</a>
+            <a href="http://jianjia.de/" target="_blank">蒹葭从风</a>
           </li>
         
           <li>
@@ -870,6 +830,10 @@
         
           <li>
             <a href="http://jinzhe.net/" target="_blank">金哲博客</a>
+          </li>
+        
+          <li>
+            <a href="http://blog.webclown.net/" target="_blank">Key&#39;s前端技术博客</a>
           </li>
         
       </ul>

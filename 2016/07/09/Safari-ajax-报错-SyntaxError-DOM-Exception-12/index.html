@@ -4,17 +4,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/4 | vingo</title>
+  <title>Safari ajax 报错 SyntaxError: DOM Exception 12 | vingo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="vingo">
-<meta property="og:url" content="http://vingojw.github.io/archives/2015/04/index.html">
+  <meta name="description" content="在电脑的safari上不能发送ajax， 调试一下发现 报错 SyntaxError: DOM Exception 12
+搜了一圈，找到这篇angular1.3.15 下 safari9.0.1 爆错：SyntaxError: DOM Exception 12 
+说是后面有个空格导致的。于是找到代码中，发现方法中ajax会设置一个头部
+1xhr.setRequestHeader( &quot;Authori">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Safari ajax 报错 SyntaxError: DOM Exception 12">
+<meta property="og:url" content="http://vingojw.github.io/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/index.html">
 <meta property="og:site_name" content="vingo">
-<meta property="og:description">
+<meta property="og:description" content="在电脑的safari上不能发送ajax， 调试一下发现 报错 SyntaxError: DOM Exception 12
+搜了一圈，找到这篇angular1.3.15 下 safari9.0.1 爆错：SyntaxError: DOM Exception 12 
+说是后面有个空格导致的。于是找到代码中，发现方法中ajax会设置一个头部
+1xhr.setRequestHeader( &quot;Authori">
+<meta property="og:updated_time" content="2016-07-20T07:05:13.068Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vingo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Safari ajax 报错 SyntaxError: DOM Exception 12">
+<meta name="twitter:description" content="在电脑的safari上不能发送ajax， 调试一下发现 报错 SyntaxError: DOM Exception 12
+搜了一圈，找到这篇angular1.3.15 下 safari9.0.1 爆错：SyntaxError: DOM Exception 12 
+说是后面有个空格导致的。于是找到代码中，发现方法中ajax会设置一个头部
+1xhr.setRequestHeader( &quot;Authori">
 <meta name="twitter:creator" content="@vingojw">
   
   
@@ -219,39 +229,69 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/12/sass/" class="archive-article-date">
-  <time datetime="2015-04-11T16:53:59.000Z" itemprop="datePublished">Apr 12</time>
+      <section id="main"><article id="post-Safari-ajax-报错-SyntaxError-DOM-Exception-12" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/" class="article-date">
+  <time datetime="2016-07-09T14:29:05.000Z" itemprop="datePublished">2016-07-09</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/12/sass/">sass</a>
+    <h1 class="article-title" itemprop="name">
+      Safari ajax 报错 SyntaxError: DOM Exception 12
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在电脑的safari上不能发送ajax， 调试一下发现 报错 SyntaxError: DOM Exception 12</p>
+<p>搜了一圈，找到这篇<a href="http://www.blogjava.net/laxxx/archive/2015/12/17/428705.html" target="_blank" rel="external">angular1.3.15 下 safari9.0.1 爆错：SyntaxError: DOM Exception 12</a> </p>
+<p>说是后面有个空格导致的。于是找到代码中，发现<br>方法中ajax会设置一个头部</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader( <span class="string">"Authorization"</span>, ( <span class="string">"Bearer "</span>+ ( get(<span class="string">'token'</span>) || <span class="string">''</span> ) ) );</span><br></pre></td></tr></table></figure>
+<p>由于在get(‘token’) 的时候没有的时候就会为空，那么上面的代码就相当于</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader(<span class="string">"Authorization"</span>, (<span class="string">"Bearer "</span>));</span><br></pre></td></tr></table></figure>
+<p>解决：<br>get(‘token’)不为空时再设置头。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://vingojw.github.io/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/" data-id="ciqujtkec0001ggvs74v2m939" class="article-share-link" data-share="baidu" data-title="Safari ajax 报错 SyntaxError: DOM Exception 12">Share</a>
+      
+
+      
+        <a href="http://vingojw.github.io/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/09/node-inspector调试node/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node-inspector调试node</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/" data-title="Safari ajax 报错 SyntaxError: DOM Exception 12" data-url="http://vingojw.github.io/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
