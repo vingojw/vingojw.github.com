@@ -4,18 +4,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>css实用片段 | vingo</title>
+  <title>图片加载失败处理 | vingo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789   //清浮动.clearfix:before,.clearfix:after&amp;#123;content: &apos;&apos;; display: table;&amp;#125;.clearfix:after&amp;#123;clear:both;&amp;#125;.clearfix&amp;#123;*zoom:1;&amp;#125;//去除双边距.fl&amp;#123;float: left;&amp;#125;.fr&amp;#123;f">
+  <meta name="description" content="1.通过js监听图片的onerror事件，然后赋值新的图片12&amp;lt;img src=&amp;apos;test.jpg&amp;apos; alt=&amp;apos;test&amp;apos; onerror=&amp;quot;this.src=&amp;apos;default.jpg&amp;apos;&amp;quot;&amp;gt;因为没有default.jpg 所以你直接复制以上html的话，请求会死循环。
+2.img 发生error的时候 be">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css实用片段">
-<meta property="og:url" content="http://vingojw.github.io/2014/07/01/css实用片段/index.html">
+<meta property="og:title" content="图片加载失败处理">
+<meta property="og:url" content="http://vingojw.github.io/2016/11/08/图片加载失败处理/index.html">
 <meta property="og:site_name" content="vingo">
-<meta property="og:description" content="123456789   //清浮动.clearfix:before,.clearfix:after&amp;#123;content: &apos;&apos;; display: table;&amp;#125;.clearfix:after&amp;#123;clear:both;&amp;#125;.clearfix&amp;#123;*zoom:1;&amp;#125;//去除双边距.fl&amp;#123;float: left;&amp;#125;.fr&amp;#123;f">
-<meta property="og:updated_time" content="2016-03-30T01:37:52.864Z">
+<meta property="og:description" content="1.通过js监听图片的onerror事件，然后赋值新的图片12&amp;lt;img src=&amp;apos;test.jpg&amp;apos; alt=&amp;apos;test&amp;apos; onerror=&amp;quot;this.src=&amp;apos;default.jpg&amp;apos;&amp;quot;&amp;gt;因为没有default.jpg 所以你直接复制以上html的话，请求会死循环。
+2.img 发生error的时候 be">
+<meta property="og:updated_time" content="2016-11-08T07:24:12.986Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css实用片段">
-<meta name="twitter:description" content="123456789   //清浮动.clearfix:before,.clearfix:after&amp;#123;content: &apos;&apos;; display: table;&amp;#125;.clearfix:after&amp;#123;clear:both;&amp;#125;.clearfix&amp;#123;*zoom:1;&amp;#125;//去除双边距.fl&amp;#123;float: left;&amp;#125;.fr&amp;#123;f">
+<meta name="twitter:title" content="图片加载失败处理">
+<meta name="twitter:description" content="1.通过js监听图片的onerror事件，然后赋值新的图片12&amp;lt;img src=&amp;apos;test.jpg&amp;apos; alt=&amp;apos;test&amp;apos; onerror=&amp;quot;this.src=&amp;apos;default.jpg&amp;apos;&amp;quot;&amp;gt;因为没有default.jpg 所以你直接复制以上html的话，请求会死循环。
+2.img 发生error的时候 be">
 <meta name="twitter:creator" content="@vingojw">
   
   
@@ -220,10 +223,10 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-css实用片段" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-图片加载失败处理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/07/01/css实用片段/" class="article-date">
-  <time datetime="2014-07-01T12:19:40.000Z" itemprop="datePublished">2014-07-01</time>
+    <a href="/2016/11/08/图片加载失败处理/" class="article-date">
+  <time datetime="2016-11-08T06:28:42.000Z" itemprop="datePublished">2016-11-08</time>
 </a>
     
   </div>
@@ -234,7 +237,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css实用片段
+      图片加载失败处理
     </h1>
   
 
@@ -242,41 +245,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   //清浮动</span><br><span class="line">.clearfix:before,</span><br><span class="line">.clearfix:after&#123;content: ''; display: table;&#125;</span><br><span class="line">.clearfix:after&#123;clear:both;&#125;</span><br><span class="line">.clearfix&#123;*zoom:1;&#125;</span><br><span class="line">//去除双边距</span><br><span class="line">.fl&#123;float: left;&#125;</span><br><span class="line">.fr&#123;float: right;&#125;</span><br><span class="line">.fl,.fr&#123;display: inline;&#125;</span><br></pre></td></tr></table></figure>
-
+        <h4 id="1-通过js监听图片的onerror事件，然后赋值新的图片"><a href="#1-通过js监听图片的onerror事件，然后赋值新的图片" class="headerlink" title="1.通过js监听图片的onerror事件，然后赋值新的图片"></a>1.通过js监听图片的onerror事件，然后赋值新的图片</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&apos;test.jpg&apos; alt=&apos;test&apos; onerror=&quot;this.src=&apos;default.jpg&apos;&quot;&gt;</span><br><span class="line">因为没有default.jpg 所以你直接复制以上html的话，请求会死循环。</span><br></pre></td></tr></table></figure>
+<h4 id="2-img-发生error的时候-before-和-after-将会起效"><a href="#2-img-发生error的时候-before-和-after-将会起效" class="headerlink" title="2.img 发生error的时候 before 和 after 将会起效"></a>2.img 发生error的时候 before 和 after 将会起效</h4><p><a href="http://jsbin.com/fokuvizabe/1/edit?html,output" target="_blank" rel="external">img 发生error的时候 before 和 after 将会起效demo</a></p>
+<h4 id="3-监听图片父元素的error事件，并且要在事件捕获阶段。"><a href="#3-监听图片父元素的error事件，并且要在事件捕获阶段。" class="headerlink" title="3.监听图片父元素的error事件，并且要在事件捕获阶段。"></a>3.监听图片父元素的error事件，并且要在事件捕获阶段。</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"s"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xx.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span><br><span class="line">	//只要是父级就OK</span><br><span class="line">    document.body.addEventListener('error',function(e)&#123;</span><br><span class="line">        console.log(e.target);</span><br><span class="line">        //e.target.src = "又是一张错误地址.jpg"; //这里如果使用base64:的图片，如果base64图片还有错误，那么也会死循环</span><br><span class="line">        //使用一张1X1的透明gif图片</span><br><span class="line">        e.target.src = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";</span><br><span class="line">    &#125;,true);</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2014/07/01/css实用片段/" data-id="civ948quu0005skvsp7861nmk" class="article-share-link" data-share="baidu" data-title="css实用片段">Share</a>
+        <a data-url="http://vingojw.github.io/2016/11/08/图片加载失败处理/" data-id="civ948qwh001eskvsrgz1y0wy" class="article-share-link" data-share="baidu" data-title="图片加载失败处理">Share</a>
       
 
       
-        <a href="http://vingojw.github.io/2014/07/01/css实用片段/#ds-thread" class="article-comment-link">Comments</a>
+        <a href="http://vingojw.github.io/2016/11/08/图片加载失败处理/#ds-thread" class="article-comment-link">Comments</a>
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2014/07/03/搭建多说评论/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          搭建多说评论
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/06/30/javascript写多行文本/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">javascript写多行文本</div>
+      <div class="article-nav-title">Safari ajax 报错 SyntaxError: DOM Exception 12</div>
     </a>
   
 </nav>
@@ -286,7 +279,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2014/07/01/css实用片段/" data-title="css实用片段" data-url="http://vingojw.github.io/2014/07/01/css实用片段/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/11/08/图片加载失败处理/" data-title="图片加载失败处理" data-url="http://vingojw.github.io/2016/11/08/图片加载失败处理/"></div>
   </section>
 </section>
       

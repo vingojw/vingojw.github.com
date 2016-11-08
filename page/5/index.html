@@ -221,6 +221,50 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-javascript操作css" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/23/javascript操作css/" class="article-date">
+  <time datetime="2014-06-23T15:11:48.000Z" itemprop="datePublished">2014-06-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/23/javascript操作css/">javascript操作css</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#通常我们把样式表添加到头部<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过link添加到页面上</span></span><br><span class="line"><span class="keyword">var</span> style = <span class="built_in">document</span>.createElement(<span class="string">'link'</span>);</span><br><span class="line">style.href = <span class="string">'style.css'</span>;</span><br><span class="line">style.rel = <span class="string">'stylesheet'</span>;</span><br><span class="line">style.type = <span class="string">'text/css'</span>;</span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'HEAD'</span>).item(<span class="number">0</span>).appendChild(style);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getClass = <span class="function"><span class="keyword">function</span>(<span class="params">ele</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ele.className.replace(<span class="regexp">/\s+/</span>,<span class="string">' '</span>).split(<span class="string">' '</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> hasClass = <span class="function"><span class="keyword">function</span>(<span class="params">ele,cls</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ele.className.match(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'(\\s|^)'</span>+cls+<span class="string">'(\\s|$)'</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//更快的版本var hasClass =function(ele,cls)&#123;</span></span><br><span class="line">      <span class="keyword">return</span> <span class="number">-1</span> &lt; (<span class="string">" "</span>+ele.className+<span class="string">" "</span>).indexOf(<span class="string">" "</span>+cls+<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> addClass = <span class="function"><span class="keyword">function</span>(<span class="params">ele,cls</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.hasClass(ele,cls)) ele.className += <span class="string">" "</span>+cls;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> removeClass = <span class="function"><span class="keyword">function</span>(<span class="params">ele,cls</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (hasClass(ele,cls)) &#123;</span><br><span class="line">        <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'(\\s|^)'</span>+cls+<span class="string">'(\\s|$)'</span>);</span><br><span class="line">        ele.className=ele.className.replace(reg,<span class="string">' '</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在更快的版本hasClass中为什么要用 前后加空格主要是为了以下情况</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> className = <span class="string">"a ab bc"</span>; 比如类名</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">className.indexOf(<span class="string">'b'</span>) 查找b还是能找到，因为b的确在字符串中。但是这不是我们要的效果。</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="string">" "</span>+className+<span class="string">" "</span>.indexOf(<span class="string">' '</span>+<span class="string">'b'</span>+<span class="string">' '</span>) 于是通过前后加空格就解决了 <span class="string">" a ab bc "</span> indexOf <span class="string">" b "</span> 这样就符合我们的要求了</span><br><span class="line"><span class="string">" a ab bc-1"</span></span><br><span class="line">(<span class="string">" "</span>+className+<span class="string">" "</span>).indexOf(<span class="string">' '</span>+<span class="string">'b'</span>+<span class="string">' '</span>)</span><br><span class="line"><span class="number">-1</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://vingojw.github.io/2014/06/23/javascript操作css/" data-id="civ948qvm000qskvs14al7gr1" class="article-share-link" data-share="baidu" data-title="javascript操作css">Share</a>
+      
+
+      
+        <a href="http://vingojw.github.io/2014/06/23/javascript操作css/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-javascirpt" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/06/23/javascirpt/" class="article-date">
@@ -249,7 +293,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://vingojw.github.io/2014/06/23/javascirpt/" data-id="cirr6u4s6000iqsvsrs23ouma" class="article-share-link" data-share="baidu" data-title="javascript操作css">Share</a>
+        <a data-url="http://vingojw.github.io/2014/06/23/javascirpt/" data-id="civ948qv7000dskvskq8xsm0b" class="article-share-link" data-share="baidu" data-title="javascript操作css">Share</a>
       
 
       
@@ -297,7 +341,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -307,6 +351,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/11/08/图片加载失败处理/">图片加载失败处理</a>
+          </li>
         
           <li>
             <a href="/2016/07/09/Safari-ajax-报错-SyntaxError-DOM-Exception-12/">Safari ajax 报错 SyntaxError: DOM Exception 12</a>
@@ -322,10 +370,6 @@
         
           <li>
             <a href="/2016/01/06/不让vue-router记录滚动条/">不让vue-router记录滚动条</a>
-          </li>
-        
-          <li>
-            <a href="/2015/12/21/vuejs前进后退过场效果/">vuejs前进后退过场效果</a>
           </li>
         
       </ul>
